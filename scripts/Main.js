@@ -11,7 +11,7 @@ function executeWidgetCode() {
 
 					tableHTML += "</tbody></table>";
 						
-					tableHTML += "<button id='callApiBtn'>Send To Vertex</button>";
+					tableHTML += "<button id=\"callApiBtn\">Send To Vertex</button>";
 					widget.body.innerHTML = tableHTML;
 			},
 
