@@ -2,13 +2,12 @@ function executeWidgetCode() {
 	require(['DS/DataDragAndDrop/DataDragAndDrop'], function(DataDragAndDrop) {
 		var myWidget = {
 			dataFull: [],
-			displayData: function(arrData) {
+			displayData: function(obj) {
+				console.log("data.data.items data:", obj.data.items[0]);
+				console.log("data.data.items data:", obj.data.items[0].objectId);
 					var tableHTML = "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
-					for (var i = 0; i < arrData.length; i++) {
-						tableHTML =
-							tableHTML + "<tr>"+arrData[i]+"</tr>";
-					}
+					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
 
@@ -22,12 +21,11 @@ function executeWidgetCode() {
 					drop: function(data){
 						console.log("Dropped data:", data);
 						var arrayData=[];
-						arrayData.push(data);
-						console.log("arrayData data:", arrayData);
+						//arrayData.push(data);
+						//console.log("arrayData data:", arrayData);
 						var obj = JSON.parse(data);
-						console.log("data.data.items data:", obj.data.items[0]);
-						console.log("data.data.items data:", obj.data.items[0].objectId);
-						myWidget.displayData(arrayData);
+						
+						myWidget.displayData(obj);
 						widget.body.style="border:5px hidden;"
 					},
 					enter: function(){
