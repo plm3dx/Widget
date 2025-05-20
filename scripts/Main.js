@@ -6,7 +6,7 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 					
-					var tableHTML = "<button id="callApiBtn">Send To Vertex</button><br><div id="apiResult"></div>"
+					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div>"
 					
 					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
@@ -16,22 +16,6 @@ function executeWidgetCode() {
 	
 					widget.body.innerHTML = tableHTML;
 					
-					document.getElementById("callApiBtn").addEventListener("click", function () {
-					if (confirm("Are you sure you want to call the web service?")) {
-						fetch("https://jsonplaceholder.typicode.com/posts/1")
-							.then(res => res.json())
-							.then(data => {
-								document.getElementById("apiResult").innerHTML =
-									'<p><strong>Title:</strong> ${data.title}</p>';
-							})
-							.catch(err => {
-								document.getElementById("apiResult").innerHTML =
-										'<p>Error: ${err.message}</p>';
-							});
-					} else {
-						document.getElementById("apiResult").innerHTML = "<p>Action cancelled.</p>";
-					}
-				});
 					
 			},
 
