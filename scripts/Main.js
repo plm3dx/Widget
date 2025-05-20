@@ -19,6 +19,24 @@ function executeWidgetCode() {
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
+					if (confirmed) {
+						fetch("https://jsonplaceholder.typicode.com/posts/1", {
+						method: "GET", // Change to POST, PUT, etc. as needed
+						headers: {
+						"Content-Type": "application/json"
+						// Add auth headers here if needed
+					}
+					})
+					.then(response => {
+						if (!response.ok) throw new Error("Network response was not ok");
+						return response.json();
+					}) 
+					.then(data => { document.getElementById("apiResult").innerHTML = `<p> Sent to Vertex. Response title: <strong>${data.title}</strong></p>`;
+					})
+					.catch(error => {
+						document.getElementById("apiResult").innerHTML =`<p> Failed to send to Vertex: ${error.message}</p>`;
+					});	
+					}	
 					};
 					
 					
