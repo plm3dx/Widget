@@ -5,8 +5,6 @@ function executeWidgetCode() {
 			displayData: function(obj) {
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
-					Var objID = obj.data.items[0].objectId;
-					console.log("objID-------------->"+objID);
 					
 					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
@@ -21,7 +19,7 @@ function executeWidgetCode() {
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
-					console.log("getElementById----------------->"+obj.data.items[0].objectId)
+					console.log("confirmed----------------->"+obj.data.items[0].objectId)
 					if (confirmed) {
 						fetch("https://localhost:8080/vertexvis/v1/senddata?id=", {
 						method: "POST", // Change to POST, PUT, etc. as needed
