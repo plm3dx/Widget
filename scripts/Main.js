@@ -19,9 +19,10 @@ function executeWidgetCode() {
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
+					console.log("getElementById----------------->"+obj.data.items[0].objectId)
 					if (confirmed) {
-						fetch("https://jsonplaceholder.typicode.com/posts/1", {
-						method: "GET", // Change to POST, PUT, etc. as needed
+						fetch("https://localhost:8080/vertexvis/v1/senddata?id=", {
+						method: "POST", // Change to POST, PUT, etc. as needed
 						headers: {
 						"Content-Type": "application/json"
 						// Add auth headers here if needed
