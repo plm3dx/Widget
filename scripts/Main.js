@@ -3,6 +3,16 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
+				// Add this inside onLoad or similar setup method
+				var btn = document.createElement("button");
+				btn.id = "callApiBtn";
+				btn.innerText = "Send To Vertex";
+				widget.body.appendChild(btn);
+
+				var resultDiv = document.createElement("div");
+				resultDiv.id = "apiResult";
+				widget.body.appendChild(resultDiv);
+					
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 					var tableHTML = "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
@@ -10,9 +20,10 @@ function executeWidgetCode() {
 					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
-						
-					tableHTML += "<button id=\"callApiBtn\">Send To Vertex</button>";
-					widget.body.innerHTML = tableHTML;
+	
+					widget.body.appendChild (tableHTML);
+					
+					
 			},
 
 			onLoad: function() {			
