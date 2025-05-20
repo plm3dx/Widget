@@ -16,6 +16,11 @@ function executeWidgetCode() {
 	
 					widget.body.innerHTML = tableHTML;
 					
+					document.getElementById("callApiBtn").onclick = function () {
+					var confirmed = confirm("Are you sure you want to send this to Vertex?");
+					console.log("confirmed----------------->"+confirmed)
+					};
+					
 					
 			},
 
