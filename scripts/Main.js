@@ -24,7 +24,7 @@ function executeWidgetCode() {
 						var arrayData=[];
 						arrayData.push(data);
 						console.log("arrayData data:", arrayData);
-						console.log("data.data.items data:", data.data.items);
+						console.log("data.data.items data:", data.data.items[0]);
 						myWidget.displayData(arrayData);
 						widget.body.style="border:5px hidden;"
 					},
