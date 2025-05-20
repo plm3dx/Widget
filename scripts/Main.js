@@ -22,8 +22,9 @@ function executeWidgetCode() {
 					drop: function(data){
 						console.log("Dropped data:", data);
 						var arrayData=[];
-						arrayData.push(data.data.items);
+						arrayData.push(data);
 						console.log("arrayData data:", arrayData);
+						console.log("data.data.items data:", data.data.items);
 						myWidget.displayData(arrayData);
 						widget.body.style="border:5px hidden;"
 					},
