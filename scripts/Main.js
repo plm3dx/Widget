@@ -3,26 +3,35 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
-				// Add this inside onLoad or similar setup method
-				var btn = document.createElement("button");
-				btn.id = "callApiBtn";
-				btn.innerText = "Send To Vertex";
-				widget.body.appendChild(btn);
-
-				var resultDiv = document.createElement("div");
-				resultDiv.id = "apiResult";
-				widget.body.appendChild(resultDiv);
-					
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
-					var tableHTML = "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
+					
+					var tableHTML = "<button id="callApiBtn">Send To Vertex</button><br><div id="apiResult"></div>"
+					
+					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
 					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
 	
-					widget.body.appendChild (tableHTML);
+					widget.body.innerHTML = tableHTML;
 					
+					document.getElementById("callApiBtn").addEventListener("click", function () {
+					if (confirm("Are you sure you want to call the web service?")) {
+						fetch("https://jsonplaceholder.typicode.com/posts/1")
+							.then(res => res.json())
+							.then(data => {
+								document.getElementById("apiResult").innerHTML =
+									'<p><strong>Title:</strong> ${data.title}</p>';
+							})
+							.catch(err => {
+								document.getElementById("apiResult").innerHTML =
+										'<p>Error: ${err.message}</p>';
+							});
+					} else {
+						document.getElementById("apiResult").innerHTML = "<p>Action cancelled.</p>";
+					}
+				});
 					
 			},
 
