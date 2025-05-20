@@ -6,12 +6,13 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 					Var objID = obj.data.items[0].objectId;
+					console.log("objID-------------->"+objID);
 					
 					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
 					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
-					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+objID+"</th></tr>";
+					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
 	
@@ -20,9 +21,9 @@ function executeWidgetCode() {
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
-					console.log("getElementById----------------->"+objID)
+					console.log("getElementById----------------->"+obj.data.items[0].objectId)
 					if (confirmed) {
-						fetch("https://localhost:8080/vertexvis/v1/senddata?id="+objID, {
+						fetch("https://localhost:8080/vertexvis/v1/senddata?id=", {
 						method: "POST", // Change to POST, PUT, etc. as needed
 						headers: {
 						"Content-Type": "application/json"
