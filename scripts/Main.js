@@ -3,7 +3,7 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(arrData) {
-					var tableHTML = "<table><thead><tr><th>First Name</th><th>Last Name</th><th>userId</th></tr></thead><tbody>";
+					var tableHTML = "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
 					for (var i = 0; i < arrData.length; i++) {
 						tableHTML =
@@ -20,8 +20,10 @@ function executeWidgetCode() {
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
+						console.log("Dropped data:", data);
 						var arrayData=[];
 						arrayData.push(data);
+						console.log("arrayData data:", arrayData);
 						myWidget.displayData(arrayData);
 						widget.body.style="border:5px hidden;"
 					},
