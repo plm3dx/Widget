@@ -21,7 +21,9 @@ function executeWidgetCode() {
 					console.log("confirmed----------------->"+confirmed)
 					console.log("confirmed----------------->"+obj.data.items[0].objectId)
 					if (confirmed) {
-						fetch("https://localhost:8080/vertexvis/v1/senddata?id=", {
+						var url = "https://localhost:8080/vertexvis/v1/senddata?id="+obj.data.items[0].objectId;
+						console.log("url----------------->"+url)
+						fetch(url, {
 						method: "POST", // Change to POST, PUT, etc. as needed
 						headers: {
 						"Content-Type": "application/json"
