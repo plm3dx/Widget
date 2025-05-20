@@ -10,7 +10,8 @@ function executeWidgetCode() {
 					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
-
+						
+					tableHTML += "<button id='callApiBtn'>Send To Vertex</button>"
 					widget.body.innerHTML = tableHTML;
 			},
 
