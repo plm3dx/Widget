@@ -3,7 +3,9 @@
  */
 
 p {
-    border-bottom: 1px solid grey;
+    margin-top:20px;
+	font-size: large;
+	font-weight: bold;
 }
 
 table {
@@ -19,4 +21,3 @@ th {
     border: 1px solid grey;
     padding: 5px;
 }
-.dragEligible:hover {background-color:#338BFF ;}
