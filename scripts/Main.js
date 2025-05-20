@@ -24,7 +24,9 @@ function executeWidgetCode() {
 						var arrayData=[];
 						arrayData.push(data);
 						console.log("arrayData data:", arrayData);
-						console.log("data.data.items data:", data.data.items[0]);
+						var obj = JSON.parse(data);
+						console.log("data.data.items data:", obj.data.items[0]);
+						console.log("data.data.items data:", obj.data.items[0].objectId);
 						myWidget.displayData(arrayData);
 						widget.body.style="border:5px hidden;"
 					},
