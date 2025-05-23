@@ -6,8 +6,8 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
-				if (obj.data.items[0] === VPMReference) {
-				var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
+					
+					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
 					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
 
@@ -41,14 +41,7 @@ function executeWidgetCode() {
 						document.getElementById("apiResult").innerHTML =`<p> Failed to send to Vertex: ${error.message}</p>`;
 					});	
 					}	
-					};	
-					
-				}
-				else{
-					confirm("Product is not an VPMReference");
-				}
-					
-					
+					};
 					
 					
 			},
