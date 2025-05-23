@@ -7,7 +7,10 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
-					console.log("Not An VPMReference Type");
+					var tableHTML ="<th>Not an VPMReference type</th><td>Please drop VPMReference type Objects </td>"
+					
+					widget.body.innerHTML = tableHTML;
+					
 				} else {
 				
 					
