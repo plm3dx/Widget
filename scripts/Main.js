@@ -8,9 +8,6 @@ function executeWidgetCode() {
 				
 				if(obj.data.items[0].objectType === "VPMReference"){
 					console.log("Here i can Write Logic");
-				}
-				
-					
 					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
 					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
@@ -20,7 +17,6 @@ function executeWidgetCode() {
 					tableHTML += "</tbody></table>";
 	
 					widget.body.innerHTML = tableHTML;
-					
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
@@ -46,8 +42,7 @@ function executeWidgetCode() {
 					});	
 					}	
 					};
-					
-					
+				}		
 			},
 
 			onLoad: function() {			
