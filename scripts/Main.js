@@ -7,9 +7,9 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
-					var tableHTML ="<th>Not an VPMReference type</th><td>Please drop VPMReference type Objects </td>"
+					var message ="<h4>Not an VPMReference Product</t4><h3>Please drop an VPMReference Product </h3>"
 					
-					widget.body.innerHTML = tableHTML;
+					widget.body.innerHTML = message;
 					
 				} else {
 				
