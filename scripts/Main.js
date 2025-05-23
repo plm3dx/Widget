@@ -3,6 +3,7 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
+				console.log("----------------------------------------")
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
@@ -42,10 +43,7 @@ function executeWidgetCode() {
 					});	
 					}	
 					};
-				}		
-			},
-
-			onLoad: function() {			
+					onLoad: function() {			
 				 var dropElement = widget.body;
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
@@ -80,5 +78,7 @@ function executeWidgetCode() {
 			}   
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
+				}		
+			},	
 	});
 }
