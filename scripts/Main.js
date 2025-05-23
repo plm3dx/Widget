@@ -3,12 +3,14 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
-				console.log("----------------------------------------")
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
-				if(obj.data.items[0].objectType === "VPMReference"){
-					console.log("Here i can Write Logic");
+				if(obj.data.items[0].objectType === null && obj.data.items[0].objectType !== "VPMReference"){
+					console.log("Not An VPMReference Type");
+				} else {
+				
+					
 					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
 					tableHTML += "<table><thead><tr><th>objectType</th><th>displayName</th><th>objectId</th></tr></thead><tbody>";
@@ -18,6 +20,7 @@ function executeWidgetCode() {
 					tableHTML += "</tbody></table>";
 	
 					widget.body.innerHTML = tableHTML;
+				}
 					document.getElementById("callApiBtn").onclick = function () {
 					var confirmed = confirm("Are you sure you want to send this to Vertex?");
 					console.log("confirmed----------------->"+confirmed)
@@ -43,7 +46,11 @@ function executeWidgetCode() {
 					});	
 					}	
 					};
-					onLoad: function() {			
+					
+					
+			},
+
+			onLoad: function() {			
 				 var dropElement = widget.body;
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
@@ -78,7 +85,5 @@ function executeWidgetCode() {
 			}   
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
-				}		
-			},	
 	});
 }
