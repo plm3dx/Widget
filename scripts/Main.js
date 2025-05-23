@@ -3,15 +3,10 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
-				console.log("data.data.items data:", obj.data.items[0]);
+				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
-					if(obj.data.items[0].objectType == VPMReference){
-						console.log("VPMReference Type is called");
-					}
-					else{
-						console.log("Not an VPMReference Type");
-					}
+				
 					
 					var tableHTML = "<button id=\"callApiBtn\">Send To Vertex</button><br><div id=\"apiResult\"></div><br><br>";
 					
