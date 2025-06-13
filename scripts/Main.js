@@ -3,6 +3,8 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
+				console.log("inside displayData");
+				console.log("data-------------", obj);
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
