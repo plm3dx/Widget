@@ -119,7 +119,7 @@ function executeWidgetCode() {
 					
 				});
 				
-				myWidget.displayData(arrResult);
+				//myWidget.displayData(arrResult);
 				
 					
 			}   
