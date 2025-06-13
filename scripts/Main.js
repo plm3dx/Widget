@@ -9,6 +9,8 @@ function executeWidgetCode() {
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
 					var message ="<h4>Not an VPMReference Product </t4><h3>Please drop an VPMReference Product </h3>"
 					
+					myWidget.dragZone(widget.body);
+					
 					widget.body.innerHTML = message;
 					
 				} else {
@@ -21,7 +23,9 @@ function executeWidgetCode() {
 					tableHTML =	tableHTML + "<tr><th>"+obj.data.items[0].objectType+"</th><th>"+obj.data.items[0].displayName+"</th><th>"+obj.data.items[0].objectId+"</th></tr>";
 
 					tableHTML += "</tbody></table>";
-	
+					
+					myWidget.dragZone(widget.body);
+					
 					widget.body.innerHTML = tableHTML;
 				}
 					document.getElementById("callApiBtn").onclick = function () {
@@ -56,6 +60,11 @@ function executeWidgetCode() {
 			onLoad: function() {			
 				 var dropElement = widget.body;
 				//code for drop functionality
+				
+				myWidget.displayData(data);
+					
+			},
+			dragZone: function (dropElement) {
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
 						console.log("Dropped data:", data);
@@ -82,10 +91,7 @@ function executeWidgetCode() {
 					} 
 					
 				});
-			
-				
-					
-			}   
+			}
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
 	});
