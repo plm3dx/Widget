@@ -58,7 +58,8 @@ function executeWidgetCode() {
 				 var dropElement = widget.body;
 				 console.log("widget data:", widget);
 				 console.log("---------------------------");
-				console.log("widget.data.data.items[0]", widget.data.data);
+				 console.log("widget.data.data", widget.data.data);
+				console.log("widget.data.data.items[0]", widget.data.data.items[0]);
 				 //console.log("widget.data.data.items[0]", widget.data.data.items[0]);
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
