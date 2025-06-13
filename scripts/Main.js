@@ -98,7 +98,7 @@ function executeWidgetCode() {
 				
 				myWidget.displayData(dropElement,arrResult);			
 					
-			}   
+			},   
 			
 			dragZone: function (dropElement,data) {
 				DataDragAndDrop.droppable(dropElement, {
