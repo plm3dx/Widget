@@ -76,12 +76,12 @@ function executeWidgetCode() {
 					//	var searchvalue=objTest[j];
 					//	console.log("searchvalue ", searchvalue);  
 					//}
-					for (var j = 0; j < objData.length; j++) {
-						console.log("objData[i]", objData[j]);
+					//for (var j = 0; j < objData.length; j++) {
+					//	console.log("objData[i]", objData[j]);
 						//objData[i].physicalid
 						//arrData[i].type 
 					  
-					}
+					//}
 										
                 }
 				//var objId = widget.data.data.items[0].objectId;
