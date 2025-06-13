@@ -64,7 +64,8 @@ function executeWidgetCode() {
 				//console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
 				for (var i = 0; i < widget.data.data.items.length; i++) {
                     var objData = widget.data.data.items[i];
-					console.log("objData ", objData);                    
+					console.log("objData ", objData);   
+					console.log("objData.objectId ", objData.objectId); 					
                 }
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
