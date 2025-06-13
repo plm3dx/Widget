@@ -1,9 +1,8 @@
 function executeWidgetCode() {	
-	require(["DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices", "DS/PlatformAPI/PlatformAPI", "DS/DataDragAndDrop/DataDragAndDrop", "DS/TagNavigatorProxy/TagNavigatorProxy"], function($, WAFData, i3DXCompassServices, PlatformAPI, DataDragAndDrop, TagNavigatorProxy) {
+	require(['DS/DataDragAndDrop/DataDragAndDrop'], function(DataDragAndDrop) {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
-				console.log("------------inside displayData-------------------");
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
@@ -67,7 +66,7 @@ function executeWidgetCode() {
 				for (var i = 0; i < widget.data.data.items.length; i++) {
                     var objData = widget.data.data.items[i];
 					console.log("objData ", objData);	
-					arrResult.push(objData);					
+					arrResult.push(objData);						
 					//var keys     = Object.keys(objData);
 					//for(var k=0; k < keys.length; k++) {
 					//	var searchKey=keys[k];
@@ -118,13 +117,11 @@ function executeWidgetCode() {
 					} 
 					
 				});
-				
-				//myWidget.displayData(arrResult);
+			
 				
 					
 			}   
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
-		widget.addEvent('onRefresh', myWidget.onLoad);
 	});
 }
