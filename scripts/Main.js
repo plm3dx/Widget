@@ -65,7 +65,12 @@ function executeWidgetCode() {
 				for (var i = 0; i < widget.data.data.items.length; i++) {
                     var objData = widget.data.data.items[i];
 					console.log("objData ", objData);   
-					console.log("objData.objectId ", objData.objectId); 					
+					var objTest=Object.values(objData);
+					for(var k=0; k < objTest.length; k++) {
+						var searchKey=objTest[k];
+						console.log("searchKey ", searchKey);  
+					}
+										
                 }
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
