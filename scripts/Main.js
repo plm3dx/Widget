@@ -60,7 +60,8 @@ function executeWidgetCode() {
 				 console.log("---------------------------");
 				 console.log("widget.data.data", widget.data.data);
 				console.log("widget.data.data.items[0]", widget.data.data.items[0]);
-				 //console.log("widget.data.data.items[0]", widget.data.data.items[0]);
+				console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
+				console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
 				//console.log("---------------------------",objId);
