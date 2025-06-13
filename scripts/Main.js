@@ -7,7 +7,7 @@ function executeWidgetCode() {
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
-					var message ="<h4>Not an VPMReference Product</t4><h3>Please drop an VPMReference Product </h3>"
+					var message ="<h4>Not an VPMReference Product </t4><h3>Please drop an VPMReference Product </h3>"
 					
 					widget.body.innerHTML = message;
 					
@@ -54,7 +54,12 @@ function executeWidgetCode() {
 			},
 
 			onLoad: function() {			
+			
 				 var dropElement = widget.body;
+				 console.log("widget data:", widget);
+				 console.log("---------------------------");
+
+				 console.log("dropElement data:", dropElement);
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
