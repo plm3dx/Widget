@@ -64,15 +64,16 @@ function executeWidgetCode() {
 				//console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
 				for (var i = 0; i < widget.data.data.items.length; i++) {
                     var objData = widget.data.data.items[i];
-					console.log("objData ", objData);  
+					console.log("objData ", objData);					 
 					var keys     = Object.keys(objData);
 					for(var k=0; k < keys.length; k++) {
 						var searchKey=keys[k];
-						console.log("searchKey ", searchKey);  
+						console.log("searchKey ", searchKey); 
+						console.log("searchvalue ", objData[keys[k]]); 						
 					}					
 					var objTest=Object.values(objData);
 					for(var j=0; j < objTest.length; j++) {
-						var searchvalue=objTest[k];
+						var searchvalue=objTest[j];
 						console.log("searchvalue ", searchvalue);  
 					}
 										
