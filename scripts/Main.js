@@ -58,8 +58,10 @@ function executeWidgetCode() {
 				 var dropElement = widget.body;
 				 console.log("widget data:", widget);
 				 console.log("---------------------------");
-
-				 console.log("dropElement data:", dropElement);
+				 console.log("widget.data.data",widget.data.data);
+				var objId = widget.data.data.items[0].objectId;
+				myWidget.displayData(objId);
+				console.log("---------------------------");
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
