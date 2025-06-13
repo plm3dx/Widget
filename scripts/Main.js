@@ -1,8 +1,9 @@
 function executeWidgetCode() {	
-	require(['DS/DataDragAndDrop/DataDragAndDrop'], function(DataDragAndDrop) {
+	require(["UWA/Drivers/jQuery", "DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices", "DS/PlatformAPI/PlatformAPI", "DS/DataDragAndDrop/DataDragAndDrop", "DS/TagNavigatorProxy/TagNavigatorProxy"], function($, WAFData, i3DXCompassServices, PlatformAPI, DataDragAndDrop, TagNavigatorProxy) {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
+				console.log("------------inside displayData-------------------");
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
@@ -62,9 +63,11 @@ function executeWidgetCode() {
 				console.log("widget.data.data.items[0]", widget.data.data.items[0]);
 				//console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
 				//console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
+				var arrResult = [];
 				for (var i = 0; i < widget.data.data.items.length; i++) {
                     var objData = widget.data.data.items[i];
-					console.log("objData ", objData);					 
+					console.log("objData ", objData);	
+					arrResult.push(objData);					
 					//var keys     = Object.keys(objData);
 					//for(var k=0; k < keys.length; k++) {
 					//	var searchKey=keys[k];
@@ -84,6 +87,7 @@ function executeWidgetCode() {
 					//}
 										
                 }
+				console.log("arrResult ", arrResult);
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
 				//console.log("---------------------------",objId);
@@ -114,11 +118,13 @@ function executeWidgetCode() {
 					} 
 					
 				});
-			
+				
+				myWidget.displayData(arrResult);
 				
 					
 			}   
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
+		widget.addEvent('onRefresh', myWidget.onLoad);
 	});
 }
