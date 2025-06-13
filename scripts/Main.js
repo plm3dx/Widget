@@ -1,5 +1,5 @@
 function executeWidgetCode() {	
-	require(["UWA/Drivers/jQuery", "DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices", "DS/PlatformAPI/PlatformAPI", "DS/DataDragAndDrop/DataDragAndDrop", "DS/TagNavigatorProxy/TagNavigatorProxy"], function($, WAFData, i3DXCompassServices, PlatformAPI, DataDragAndDrop, TagNavigatorProxy) {
+	require(["DS/WAFData/WAFData", "DS/i3DXCompassServices/i3DXCompassServices", "DS/PlatformAPI/PlatformAPI", "DS/DataDragAndDrop/DataDragAndDrop", "DS/TagNavigatorProxy/TagNavigatorProxy"], function($, WAFData, i3DXCompassServices, PlatformAPI, DataDragAndDrop, TagNavigatorProxy) {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
