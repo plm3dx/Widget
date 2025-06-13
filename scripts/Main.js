@@ -5,6 +5,21 @@ function executeWidgetCode() {
 			displayData: function(dropElement,obj) {
 				console.log("------------inside displayData-------------------");
 				console.log("------------ obj-------------------", obj);
+				
+				for (var i = 0; i < obj.length; i++) {
+					console.log("------------ obj-------------------", obj[i]);
+				  var $tr = $("<tr id='" + obj[i].physicalid + "' rowSelected='false'><td>" 
+				  + obj[i].type 
+				  + "</td><td>" 
+				  + obj[i].name 
+				  + "</td><td>" 
+				  + obj[i].revision 
+				  + "</td><td>" 
+				  + obj[i].current 
+				  + "</td></tr>");
+				  
+				}
+				console.log("------------ After for-------------------");
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
