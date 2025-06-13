@@ -2,13 +2,16 @@ function executeWidgetCode() {
 	require(['DS/DataDragAndDrop/DataDragAndDrop'], function(DataDragAndDrop) {
 		var myWidget = {
 			dataFull: [],
-			displayData: function(obj) {
+			displayData: function(dropElement,obj) {
+				console.log("------------inside displayData-------------------");
+				console.log("------------ obj-------------------", obj);
 				console.log("data.data.items data: Object Type", obj.data.items[0]);
 				console.log("data.data.items data:", obj.data.items[0].objectId);
 				
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
 					var message ="<h4>Not an VPMReference Product </t4><h3>Please drop an VPMReference Product </h3>"
 					
+					myWidget.dragZone(dropElement,obj);
 					widget.body.innerHTML = message;
 					
 				} else {
@@ -22,6 +25,8 @@ function executeWidgetCode() {
 
 					tableHTML += "</tbody></table>";
 	
+					myWidget.dragZone(dropElement,obj);
+					
 					widget.body.innerHTML = tableHTML;
 				}
 					document.getElementById("callApiBtn").onclick = function () {
@@ -53,8 +58,7 @@ function executeWidgetCode() {
 					
 			},
 
-			onLoad: function() {			
-			
+			onLoad: function() {		
 				 var dropElement = widget.body;
 				 console.log("widget data:", widget);
 				 console.log("---------------------------");
@@ -91,6 +95,12 @@ function executeWidgetCode() {
 				//myWidget.displayData(objId);
 				//console.log("---------------------------",objId);
 				//code for drop functionality
+				
+				myWidget.displayData(dropElement,arrResult);			
+					
+			}   
+			
+			dragZone: function (dropElement,data) {
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
 						console.log("Dropped data:", data);
@@ -117,11 +127,9 @@ function executeWidgetCode() {
 					} 
 					
 				});
-			
-				
-					
-			}   
+			}
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
+		widget.addEvent("onRefresh", myWidget.onLoad);
 	});
 }
