@@ -60,8 +60,12 @@ function executeWidgetCode() {
 				 console.log("---------------------------");
 				 console.log("widget.data.data", widget.data.data);
 				console.log("widget.data.data.items[0]", widget.data.data.items[0]);
-				console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
-				console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
+				//console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
+				//console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
+				for (var i = 0; i < widget.data.data.items.length; i++) {
+                    var objData = widget.data.data.items[i];
+					console.log("objData ", objData);                    
+                }
 				//var objId = widget.data.data.items[0].objectId;
 				//myWidget.displayData(objId);
 				//console.log("---------------------------",objId);
