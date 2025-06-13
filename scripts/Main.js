@@ -8,7 +8,7 @@ function executeWidgetCode() {
 				
 				for (var i = 0; i < obj.length; i++) {
 					console.log("------------ obj-------------------", obj[i]);
-				  var $tr = $("<tr id='" + obj[i].physicalid + "' rowSelected='false'><td>" 
+				  var tr = "<tr id='" + obj[i].physicalid + "' rowSelected='false'><td>" 
 				  + obj[i].type 
 				  + "</td><td>" 
 				  + obj[i].name 
@@ -16,7 +16,7 @@ function executeWidgetCode() {
 				  + obj[i].revision 
 				  + "</td><td>" 
 				  + obj[i].current 
-				  + "</td></tr>");
+				  + "</td></tr>";
 				  
 				}
 				console.log("------------ After for-------------------");
