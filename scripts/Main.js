@@ -53,7 +53,8 @@ function executeWidgetCode() {
 					
 			},
 
-			onLoad: function() {							
+			onLoad: function() {
+				console.log("widget.data.data.items[0]", widget.data.data.items[0]);				
 				myWidget.dragZone();	
 			},
 
