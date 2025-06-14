@@ -53,8 +53,12 @@ function executeWidgetCode() {
 					
 			},
 
-			onLoad: function() {			
-				 var dropElement = widget.body;
+			onLoad: function() {							
+				myWidget.dragZone();	
+			},
+
+			dragZone: function() {
+				var dropElement = widget.body;
 				//code for drop functionality
 				DataDragAndDrop.droppable(dropElement, {
 					drop: function(data){
@@ -81,11 +85,8 @@ function executeWidgetCode() {
 						widget.body.style="border:5px solid orange;"
 					} 
 					
-				});
-			
-				
-					
-			}   
+				});	
+			}
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
 	});
