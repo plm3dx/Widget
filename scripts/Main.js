@@ -54,7 +54,7 @@ function executeWidgetCode() {
 			},
 
 			onLoad: function() {
-				onsole.log("----------onLoad-------");
+				console.log("----------onLoad-------");
 				if(widget.data.data !== undefined) {
 					console.log("widget.data.data.items[0]", widget.data.data.items[0]);
 				}
