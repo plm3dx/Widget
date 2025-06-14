@@ -89,5 +89,6 @@ function executeWidgetCode() {
 			}
 		}; 			
 		widget.addEvent('onLoad',  myWidget.onLoad);
+		widget.addEvent('onRefresh', myWidget.onLoad);
 	});
 }
