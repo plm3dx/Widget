@@ -3,8 +3,9 @@ function executeWidgetCode() {
 		var myWidget = {
 			dataFull: [],
 			displayData: function(obj) {
-				console.log("data.data.items data: Object Type", obj.data.items[0]);
-				console.log("data.data.items data:", obj.data.items[0].objectId);
+				console.log("----------------displayData-----------");
+				//console.log("data.data.items data: Object Type", obj.data.items[0]);
+				//console.log("data.data.items data:", obj.data.items[0].objectId);
 				
 				if(obj.data.items[0].objectType === null || obj.data.items[0].objectType !== "VPMReference"){
 					var message ="<h4>Not an VPMReference Product </t4><h3>Please drop an VPMReference Product </h3>"
@@ -57,9 +58,10 @@ function executeWidgetCode() {
 				console.log("----------onLoad-------");
 				if(widget.data.data !== undefined) {
 					console.log("widget.data.data.items[0]", widget.data.data.items[0]);
-					if(widget.data.data !== undefined) {
+					if(widget.data.data.items[0] !== undefined) {
 						console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
 						console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
+						myWidget.displayData(widget.data);
 					}
 				}
 				myWidget.dragZone();	
