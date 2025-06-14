@@ -57,6 +57,10 @@ function executeWidgetCode() {
 				console.log("----------onLoad-------");
 				if(widget.data.data !== undefined) {
 					console.log("widget.data.data.items[0]", widget.data.data.items[0]);
+					if(widget.data.data !== undefined) {
+						console.log("widget.data.data.items[0].objectId", widget.data.data.items[0].objectId);
+						console.log("widget.data.data.items[0].objectType", widget.data.data.items[0].objectType);
+					}
 				}
 				myWidget.dragZone();	
 			},
