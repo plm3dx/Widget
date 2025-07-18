@@ -22,7 +22,7 @@ function executeWidgetCode() {
 					console.log("objectId----------------->"+obj.data.items[0].objectId);
 					
 					if (confirmed) {
-						var url = "https://localhost:8080/vertexvis/v1/senddata?id=" + obj.data.items[0].objectId;
+						var url = "https://www.plmtrainer.com:444/Vertex-0.0.1-SNAPSHOT/vertexvis/v1/exportdata?id=" + obj.data.items[0].objectId;
 						console.log("url----------------->" + url);
 						
 						fetch(url, {
