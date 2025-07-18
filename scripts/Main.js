@@ -40,7 +40,7 @@ function executeWidgetCode() {
 							const formattedSummary = summary.replace(/\n/g, "<br>");
 							
 							document.getElementById("apiResult").innerHTML = 
-								"<p>Sent to Vertex. Summary:</p><p>" + formattedSummary + "</p>";
+								"<p>Sent to Vertex. Summary:</p>" + formattedSummary;
 						})
 						.catch(function(error) {
 							document.getElementById("apiResult").innerHTML = "<p> Failed to send to Vertex: " + error.message + "</p>";
