@@ -36,8 +36,11 @@ function executeWidgetCode() {
 							return response.json();
 						})
 						.then(function(data) {
-							document.getElementById("apiResult").innerHTML =
-								"<p>Sent to Vertex. Response JSON:</p><pre>" + JSON.stringify(data, null, 2) + "</pre>";
+							const summary = data["Summary Lines"];
+							const formattedSummary = summary.replace(/\n/g, "<br>");
+							
+							document.getElementById("apiResult").innerHTML = 
+								"<p>Sent to Vertex. Summary:</p><p>" + formattedSummary + "</p>";
 						})
 						.catch(function(error) {
 							document.getElementById("apiResult").innerHTML = "<p> Failed to send to Vertex: " + error.message + "</p>";
