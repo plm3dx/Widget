@@ -26,7 +26,7 @@ function executeWidgetCode() {
 						console.log("url----------------->" + url);
 						
 						fetch(url, {
-							method: "POST",
+							method: "GET",
 							headers: {
 								"Content-Type": "application/json"
 							}
